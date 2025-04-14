@@ -1,0 +1,280 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sw: <https://starwars.fandom.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sw:Event a rdfs:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "A significant occurrence in the Star Wars universe." .
+
+sw:Thing a rdfs:Class ;
+    rdfs:label "Thing" ;
+    rdfs:comment "An entity or concept related to an event." .
+
+sw:description a rdf:Property ;
+    rdfs:label "Description" ;
+    rdfs:comment "A brief description of the event." ;
+    rdfs:domain sw:Event ;
+    rdfs:range xsd:string .
+
+sw:eventYear a rdf:Property ;
+    rdfs:label "Event Year" ;
+    rdfs:comment "The year of the event." ;
+    rdfs:domain sw:Event ;
+    rdfs:range xsd:integer .
+
+sw:event_0 sw:description "The Dai Bendu, the religious group that would be attributed with the first holocrons, exists as the precursor to the Jedi Order."^^xsd:string ;
+    sw:eventYear -25025 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Dai_Bendu>,
+        <https://starwars.fandom.com/wiki/Holocron>,
+        <https://starwars.fandom.com/wiki/Jedi_Order>,
+        <https://starwars.fandom.com/wiki/Religion> .
+
+sw:event_1 sw:description "In pursuit of the preservation of peace and justice, an individual who came to be known as the Prime Jedi founds the Jedi Order on Ahch-To. Mosaic depiction of the Prime Jedi "^^xsd:string ;
+    sw:eventYear -25025 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Ahch-To>,
+        <https://starwars.fandom.com/wiki/Prime_Jedi> .
+
+sw:event_10 sw:description "The physical distinctions between the Neimoidian and Duros species becomes clear on Neimoidia."^^xsd:string ;
+    sw:eventYear -15000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Neimoidian> .
+
+sw:event_11 sw:description "Settlers from Corellia colonize a planet that becomes an Ordance/Regional Depot known as Ord Mantell."^^xsd:string ;
+    sw:eventYear -12000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Corellia>,
+        <https://starwars.fandom.com/wiki/Ord_Mantell>,
+        <https://starwars.fandom.com/wiki/Ordnance/Regional_Depot> .
+
+sw:event_12 sw:description "As credited by the Jedi, the planet Ossus comes to be their cultural center, and is made a near-mandatory pilgrimage site. The Old Republic era "^^xsd:string ;
+    sw:eventYear -12000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Old_Republic-era>,
+        <https://starwars.fandom.com/wiki/Ossus> .
+
+sw:event_13 sw:description "The Coruscant reckoning calendar is introduced."^^xsd:string ;
+    sw:eventYear -7977 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Coruscant_reckoning_calendar> .
+
+sw:event_14 sw:description "Civilization on Bardotta begins, with the Frangawl Cult reigning over a militant society."^^xsd:string ;
+    sw:eventYear -6000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Bardotta>,
+        <https://starwars.fandom.com/wiki/Frangawl_Cult> .
+
+sw:event_15 sw:description "The Rimma Trade Route is established."^^xsd:string ;
+    sw:eventYear -5500 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Rimma_Trade_Route> .
+
+sw:event_16 sw:description "The Chiss Ascendancy is formed."^^xsd:string ;
+    sw:eventYear -5100 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Chiss_Ascendancy> .
+
+sw:event_17 sw:description "The Chiss start exploring the Unknown Regions."^^xsd:string ;
+    sw:eventYear -5019 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Chiss> .
+
+sw:event_18 sw:description "Soon after Empress Teta's Unification Wars, the Great Hyperspace War is waged by the Sith Lord Naga Sadow according to the Qel-Droma Epics."^^xsd:string ;
+    sw:eventYear -5000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Empress>,
+        <https://starwars.fandom.com/wiki/Great_Hyperspace_War>,
+        <https://starwars.fandom.com/wiki/Naga_Sadow>,
+        <https://starwars.fandom.com/wiki/Qel-Droma_Epics>,
+        <https://starwars.fandom.com/wiki/Teta>,
+        <https://starwars.fandom.com/wiki/Unification_Wars_(Koros)> .
+
+sw:event_19 sw:description "The Sith wage a war against the Jedi and the Galactic Republic, which sees the fall of the Republic capital and cityworld Coruscant. This allows the Sith to build a shrine on the planet which exudes the force of the dark side. However, the Jedi eventually repel the Sith and reclaim Coruscant."^^xsd:string ;
+    sw:eventYear -5000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Battle_of_Coruscant_(Sith_war)>,
+        <https://starwars.fandom.com/wiki/Capital>,
+        <https://starwars.fandom.com/wiki/Ecumenopolis>,
+        <https://starwars.fandom.com/wiki/Shrine_in_the_Depths>,
+        <https://starwars.fandom.com/wiki/Sith_war_(Old_Republic)> .
+
+sw:event_2 sw:description "The First Jedi Temple is built on Ahch-To, and the Jedi village is constructed on the Temple Island soon afterward."^^xsd:string ;
+    sw:eventYear -25025 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/First_Jedi_Temple>,
+        <https://starwars.fandom.com/wiki/Jedi_village>,
+        <https://starwars.fandom.com/wiki/Temple_Island> .
+
+sw:event_3 sw:description "Shortly after the founding of the Jedi Order, the world Ilum is discovered by a Jedi scout through Force-assisted hyperspace navigation."^^xsd:string ;
+    sw:eventYear -25025 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Unidentified_Jedi_scout> .
+
+sw:event_4 sw:description "Professor Huyang powers up."^^xsd:string ;
+    sw:eventYear -25020 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Huyang>,
+        <https://starwars.fandom.com/wiki/Professor> .
+
+sw:event_5 sw:description "The Galactic Republic is formed by the Core Founders, twenty-two Core Worlds which include such planets as Alderaan."^^xsd:string ;
+    sw:eventYear -25000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Alderaan>,
+        <https://starwars.fandom.com/wiki/Core_Founder>,
+        <https://starwars.fandom.com/wiki/Galactic_Republic> .
+
+sw:event_6 sw:description "Expansionist Period The foundation of the Corellian Run helps the formation of the Corellia system. The Corellian Trade Spine and the Perlemian Trade Route are also founded. Dawn of the Jedi era Duros explorers discover and colonize the planet Neimoidia. The planet Cato Neimoidia joins the Republic."^^xsd:string ;
+    sw:eventYear -25000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Cato_Neimoidia>,
+        <https://starwars.fandom.com/wiki/Corellian_Run>,
+        <https://starwars.fandom.com/wiki/Corellian_Trade_Spine>,
+        <https://starwars.fandom.com/wiki/Corellian_system>,
+        <https://starwars.fandom.com/wiki/Dawn_of_the_Jedi_era>,
+        <https://starwars.fandom.com/wiki/Duros>,
+        <https://starwars.fandom.com/wiki/Expansionist_Period>,
+        <https://starwars.fandom.com/wiki/Neimoidia>,
+        <https://starwars.fandom.com/wiki/Perlemian_Trade_Route> .
+
+sw:event_7 sw:description "The planet Neimoidia joins the Galactic Republic as an independent world in itself. Neimoidia, colonized by the Duros species, some of whom evolved into Neimoidians "^^xsd:string ;
+    sw:eventYear -22000 .
+
+sw:event_8 sw:description "An attack on Garn, later known as the Doom of the Ordu Aspectu, occurs—the Fortress of Garn was possessed by the Ordu Aspectu, a splinter group of the Jedi Order. Led by Rur and related to the Massassi, their experiments on immortality led to conflicts with Jedi orthodoxy, beginning the Entruvia Conflict. A dating system based on the signing of the Domancion Accord was used around this time, and the conflict ended with a Jedi—Ordu Aspectu peace treaty: Jedi inspectors arrived at Rur's citadel, and, believing they intended to deactivate him, an artificial intelligence made of Rur's knowledge seized control of the citadel's droids and slaughtered its inhabitants. Rur sacrificed himself to deactivate the machine, hyperspace-jumping the citadel across the galaxy."^^xsd:string ;
+    sw:eventYear -20000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Attack_on_Garn>,
+        <https://starwars.fandom.com/wiki/Citadel_of_Rur>,
+        <https://starwars.fandom.com/wiki/Domancion_Accord>,
+        <https://starwars.fandom.com/wiki/Droid>,
+        <https://starwars.fandom.com/wiki/Entruvia_Conflict>,
+        <https://starwars.fandom.com/wiki/Eternal_Rur>,
+        <https://starwars.fandom.com/wiki/Garn>,
+        <https://starwars.fandom.com/wiki/Jedi%E2%80%93Ordu_Aspectu_treaty>,
+        <https://starwars.fandom.com/wiki/Massassi>,
+        <https://starwars.fandom.com/wiki/Ordu_Aspectu>,
+        <https://starwars.fandom.com/wiki/Rur> .
+
+sw:event_9 sw:description "Rodia officially joins the Galactic Republic."^^xsd:string ;
+    sw:eventYear -15000 ;
+    sw:relatedTo <https://starwars.fandom.com/wiki/Rodia> .
+
+sw:name a rdf:Property ;
+    rdfs:label "Name" ;
+    rdfs:comment "The name of the thing." ;
+    rdfs:domain sw:Thing ;
+    rdfs:range xsd:string .
+
+sw:relatedTo a rdf:Property ;
+    rdfs:label "Related To" ;
+    rdfs:comment "Entities or concepts related to the event." ;
+    rdfs:domain sw:Event ;
+    rdfs:range sw:Thing .
+
+sw:url a rdf:Property ;
+    rdfs:label "URL" ;
+    rdfs:comment "The URL of the thing." ;
+    rdfs:domain sw:Thing ;
+    rdfs:range xsd:anyURI .
+
+<https://starwars.fandom.com/wiki/Ahch-To> sw:name "Ahch-To"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Alderaan> sw:name "Alderaan"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Attack_on_Garn> sw:name "Attack on Garn"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Bardotta> sw:name "Bardotta"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Battle_of_Coruscant_(Sith_war)> sw:name "Battle of Coruscant (Sith war)"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Capital> sw:name "Capital"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Cato_Neimoidia> sw:name "Cato Neimoidia"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Chiss> sw:name "Chiss"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Chiss_Ascendancy> sw:name "Chiss Ascendancy"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Citadel_of_Rur> sw:name "Citadel of Rur"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Core_Founder> sw:name "Core Founder"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Corellia> sw:name "Corellia"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Corellian_Run> sw:name "Corellian Run"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Corellian_Trade_Spine> sw:name "Corellian Trade Spine"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Corellian_system> sw:name "Corellian system"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Coruscant_reckoning_calendar> sw:name "Coruscant reckoning calendar"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Dai_Bendu> sw:name "Dai Bendu"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Dawn_of_the_Jedi_era> sw:name "Dawn of the Jedi era"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Domancion_Accord> sw:name "Domancion Accord"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Droid> sw:name "Droid"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Duros> sw:name "Duros"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Ecumenopolis> sw:name "Ecumenopolis"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Empress> sw:name "Empress"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Entruvia_Conflict> sw:name "Entruvia Conflict"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Eternal_Rur> sw:name "Eternal Rur"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Expansionist_Period> sw:name "Expansionist Period"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/First_Jedi_Temple> sw:name "First Jedi Temple"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Frangawl_Cult> sw:name "Frangawl Cult"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Galactic_Republic> sw:name "Galactic Republic"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Garn> sw:name "Garn"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Great_Hyperspace_War> sw:name "Great Hyperspace War"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Holocron> sw:name "Holocron"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Huyang> sw:name "Huyang"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Jedi%E2%80%93Ordu_Aspectu_treaty> sw:name "Jedi–Ordu Aspectu treaty"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Jedi_Order> sw:name "Jedi Order"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Jedi_village> sw:name "Jedi village"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Massassi> sw:name "Massassi"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Naga_Sadow> sw:name "Naga Sadow"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Neimoidia> sw:name "Neimoidia"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Neimoidian> sw:name "Neimoidian"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Old_Republic-era> sw:name "Old Republic-era"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Ord_Mantell> sw:name "Ord Mantell"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Ordnance/Regional_Depot> sw:name "Ordnance/Regional Depot"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Ordu_Aspectu> sw:name "Ordu Aspectu"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Ossus> sw:name "Ossus"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Perlemian_Trade_Route> sw:name "Perlemian Trade Route"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Prime_Jedi> sw:name "Prime Jedi"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Professor> sw:name "Professor"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Qel-Droma_Epics> sw:name "Qel-Droma Epics"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Religion> sw:name "Religion"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Rimma_Trade_Route> sw:name "Rimma Trade Route"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Rodia> sw:name "Rodia"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Rur> sw:name "Rur"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Shrine_in_the_Depths> sw:name "Shrine in the Depths"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Sith_war_(Old_Republic)> sw:name "Sith war (Old Republic)"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Temple_Island> sw:name "Temple Island"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Teta> sw:name "Teta"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Unidentified_Jedi_scout> sw:name "Unidentified Jedi scout"^^xsd:string .
+
+<https://starwars.fandom.com/wiki/Unification_Wars_(Koros)> sw:name "Unification Wars (Koros)"^^xsd:string .
+
