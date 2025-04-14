@@ -1,5 +1,7 @@
 # SW Timeline KG
 
+![SW Timeline KG](img/swtimeline.png)
+
 ## Queries
 
 Get all things in the Star Wars universe with their names.
