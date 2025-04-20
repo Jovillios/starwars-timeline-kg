@@ -64,6 +64,34 @@ class PruneTTL(PruneAlgorithm):
 
         return g
 
+class PruneBACKPERF(PruneAlgorithm):
+    """
+    Prune events based on a benchmark
+    """
+    def __init__(self, benchmark):
+        super().__init__(name="PruneBACKPERF")
+        self.benchmark = benchmark
+
+    def __call__(self, g):
+        print(f"Pruning with {self.name} algorithm")
+
+        SW = self.namespace
+        n_triples_removed = 0
+        n_triples = len(list(g))
+        
+        for event in g.subjects(RDF.type, SW.Event):
+            # Remove the useless triples about this event
+            for triple in g.triples((event, None, None)):  
+                g_copy = copy.deepcopy(g)
+                g_copy.remove(triple)
+                if self.benchmark(g_copy) > self.benchmark(g):
+                    g.remove(triple)
+                    n_triples_removed += 1
+                
+        print(
+            f"Removed {n_triples_removed} events out of {n_triples} total events.")
+
+        return g
 
 class PruneSummarize(PruneAlgorithm):
     """
