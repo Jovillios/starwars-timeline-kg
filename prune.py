@@ -1,6 +1,8 @@
 
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF
+import time
+import matplotlib.pyplot as plt
 
 
 class PruneAlgorithm:
@@ -19,7 +21,6 @@ class PruneAlgorithm:
 
     def __str__(self):
         return self.name
-
 
 class PruneTTL(PruneAlgorithm):
     """
@@ -114,7 +115,67 @@ def load_graph(filename):
     g.parse(filename, format='turtle')
     return g
 
+class PruningTester:
+    """To adapt to see the influence of the number of triple for example"""
+    def __init__(self, graphs, pruning_algorithms, benchmark_function):
+        self.dict_graph = graphs
+        self.pruning_algorithms = pruning_algorithms
+        self.benchmark_function = benchmark_function
+        self.results = {{}}
+        
+    def test_all_graph(self):
+        for graph_name, graph in self.dict_graph.items():
+            self.test_graph(graph, graph_name)
 
+    def test_graph(self, graph, grah_name = "default"):
+        results = {}
+        initial_triples = len(graph)
+        initial_performance = self.benchmark_function(graph)
+
+        for algo_name, algorithm in self.pruning_algorithms.items():
+            start_time = time.time()
+            pruned_graph = algorithm(graph)
+            end_time = time.time()
+
+            final_triples = len(pruned_graph)
+            final_performance = self.benchmark_function(pruned_graph)
+
+            self.results[algo_name][grah_name] = {
+                'time_to_prune': end_time - start_time,
+                'initial_performance': initial_performance,
+                'final_performance': final_performance,
+                'initial_triples': initial_triples,
+                'final_triples': final_triples,
+                'triples_removed': initial_triples - final_triples
+            }
+
+    def display_results(self, results):
+        for algo_name, result_by_algo in results.items():
+            for graph_name, result in result_by_algo.items():
+                print(f"Algorithm: {algo_name}")
+                print(f"Graph : {graph_name}")
+                print(f"Time to prune: {result['time_to_prune']} seconds")
+                print(f"Initial performance: {result['initial_performance']}")
+                print(f"Final performance: {result['final_performance']}")
+                print(f"Initial triples: {result['initial_triples']}")
+                print(f"Final triples: {result['final_triples']}")
+                print(f"Triples removed: {result['triples_removed']}")
+                print("-" * 40)
+                
+    def plot_results(self, metrics = ['time_to_prune', 'final_performance', 'final_triples', 'triples_removed']):
+        for metric in metrics:
+            plt.figure(figsize=(10, 6))
+            for algo_name, result_by_algo in self.results.items():
+                x = list(result_by_algo.keys())
+                y = [result[metric] for result in result_by_algo.values()]
+                plt.plot(x, y, label=algo_name)
+            plt.xlabel('Graph Name')
+            plt.ylabel(metric.replace('_', ' ').title())
+            plt.title(f'{metric.replace("_", " ").title()} vs Graph Name')
+            plt.legend()
+            plt.grid(True)
+            plt.show()
+            
 if __name__ == "__main__":
     g = load_graph("ttl/starwars_events.ttl")
     pruneTTl = PruneTTL(min_year=0)
