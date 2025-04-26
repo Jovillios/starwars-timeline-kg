@@ -42,11 +42,3 @@ class Embedding:
                 pickle.dump(response["embeddings"], f)
         return response["embeddings"]
 
-
-if __name__ == "__main__":
-    embedding = Embedding("nomic-embed-text")
-    llm = LLM("gemma3:4b")
-    response = llm.generate("hello")
-    print(response)
-    response = embedding.embed("hello")
-    print(response)

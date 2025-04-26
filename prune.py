@@ -78,13 +78,13 @@ class PruneTTL(PruneAlgorithm):
         return g
 
 
-class PruneBACKPERF(PruneAlgorithm):
+class PruneBackperf(PruneAlgorithm):
     """
     Prune events based on a benchmark
     """
 
     def __init__(self, threshold, embed_model, questions, topk):
-        super().__init__(name="PruneBACKPERF")
+        super().__init__(name="PruneBackperf")
         # benchmark is a class that give a performance score between 0 and 1
         # without any pruning the performance score should be 1
         # and the more we prune the less the performance score
@@ -217,12 +217,6 @@ class PruneSummarize(PruneAlgorithm):
         return g
 
 
-def load_graph(filename):
-    g = Graph()
-    g.parse(filename, format='turtle')
-    return g
-
-
 class PruningTester:
     """To adapt to see the influence of the number of triple for example"""
 
@@ -286,30 +280,3 @@ class PruningTester:
             plt.show()
 
 
-if __name__ == "__main__":
-    g = load_graph("ttl/starwars_events.ttl")
-    print("load embed model ...")
-    embed_model = Embedding("nomic-embed-text")
-    print("load llm ...")
-    llm = LLM("gemma3:4b")
-    threshold = 0.01
-
-    print("load benchmark ...")
-    benchmark = Benchmark("star_wars_timeline_mcq.csv", llm, embed_model, topk=10)
-    #descriptions = get_descriptions(g)
-    #print(benchmark(descriptions))
-
-    questions = benchmark.get_questions()
-
-    prune = PruneBACKPERF(threshold, embed_model, questions, topk=100)
-    g = prune(g)
-    descriptions = get_descriptions(g)
-    print(benchmark(descriptions))
-    #pruneSum = PruneSummarize(llm, embed_model)
-    #g = pruneSum(g)
-    #g.serialize(destination="ttl/starwars_events_pruned_sum.ttl",
-    #            format='turtle')
-    # pruneTTl = PruneTTL(min_year=0)
-    # g = pruneTTl(g)
-    # g.serialize(destination="ttl/starwars_events_pruned.ttl", format='turtle')
-    # print("Graph saved to ttl/starwars_events_pruned.ttl")

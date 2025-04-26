@@ -1,0 +1,13 @@
+beautifulsoup4==4.13.4
+matplotlib==3.10.1
+networkx==3.4.2
+numpy==2.2.5
+ollama==0.4.8
+pandas==2.2.3
+pyvis==0.3.2
+rdflib==7.1.4
+Requests==2.32.3
+scikit_learn==1.6.1
+streamlit==1.39.0
+torch==2.6.0
+tqdm==4.66.5
