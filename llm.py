@@ -22,7 +22,7 @@ class Embedding:
     def __init__(self, model_name: str):
         self.model_name = model_name
         ollama.pull(self.model_name)
-        self.file_name = "embeddings.pkl"
+        self.file_name = "docs/embeddings.pkl"
 
     def load_embeddings(self):
         """Load the embeddings previously generated."""
