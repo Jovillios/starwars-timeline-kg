@@ -21,7 +21,7 @@ def main(args):
 
     if not args.pre_pruned:
         # Choose the pruning method based on the argument
-        if args.pruning_method == "PruneBACKPERF":
+        if args.pruning_method == "PruneBackperf":
             prune = PruneBackperf(args.threshold, embed_model, questions, topk=args.prune_topk)
         elif args.pruning_method == "PruneSummarize":
             prune = PruneSummarize(llm, embed_model)
