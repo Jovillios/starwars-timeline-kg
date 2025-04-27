@@ -13,7 +13,7 @@ class LLM:
         return response["response"]
 
     def summarize(self, descriptions: list) -> str:
-        prompt = f"Summarize the following descriptions of event nodes into a single event node description of one sentence :\n\n{'\n\n'.join(descriptions)}"
+        prompt = f"Summarize the following descriptions of event nodes into a single event node description of one sentence :\n\n{'\n\n'.join(descriptions)}\n\n:description: "
         response = self.generate(prompt)
         return response
 
