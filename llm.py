@@ -41,4 +41,3 @@ class Embedding:
             with open(self.file_name, "wb") as f:
                 pickle.dump(response["embeddings"], f)
         return response["embeddings"]
-
